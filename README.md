@@ -1,5 +1,4 @@
-## qiankun 学习 demo
-
+## qiankun 学习
 [qiankun官网](https://qiankun.umijs.org/zh)
 
 - 基座应用为 react 应用
