@@ -1,5 +1,7 @@
 import { registerMicroApps, setDefaultMountApp, start } from "qiankun";
 
+import Test1 from "./components/test1";
+
 const loader = (loading: boolean) => {
 	console.log("loader loading->", loading);
 };
@@ -11,7 +13,12 @@ registerMicroApps(
 			entry: "//localhost:5000",
 			container: "#micro-app-container",
 			activeRule: "/micro-react-app",
-			props: { routerBase: "/micro-react-app" },
+			props: {
+				routerBase: "/micro-react-app",
+				commonComponent: {
+					Test1,
+				},
+			},
 			loader,
 		},
 		{
@@ -42,6 +49,6 @@ registerMicroApps(
 	}
 );
 
-setDefaultMountApp('/micro-react-app')
+setDefaultMountApp("/micro-react-app");
 
 start();

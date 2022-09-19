@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
+import { setMainCommonComponent } from "./utils/cacheComponent";
 
 let root:ReactDOM.Root
 
@@ -35,6 +36,7 @@ export async function bootstrap() {
 
 export async function mount(props: any) {
 	console.log("[react18] props from main framework", props);
+	setMainCommonComponent(props.commonComponent)
 	render(props);
 }
 
